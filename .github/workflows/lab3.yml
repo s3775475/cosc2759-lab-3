@@ -17,3 +17,9 @@ jobs:
           node-version: "16"
           cache: "npm"
       - run: npm clean-install
+      - run: npm pack
+      - name: Upload artefact
+        uses: actions/upload-artifact@v3
+        with:
+          name: node-todo-0.0.0
+          path: node-todo-0.0.0.tgz
